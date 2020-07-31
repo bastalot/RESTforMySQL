@@ -19,8 +19,6 @@ public class Genre {
     @OneToMany(mappedBy = "id_genre")
     Set<TVSeriesGenres> tvSeriesGenresSet;
 
-    public Genre() {
-    }
 
     public Integer getId_genre() {
         return id_genre;
