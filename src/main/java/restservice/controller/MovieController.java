@@ -39,7 +39,7 @@ public class MovieController {
         Movie movie = repository.findOne(id_movie);
 
         if (movieDetails.getTitle() != null)
-        movie.setTitle(movieDetails.getTitle());
+            movie.setTitle(movieDetails.getTitle());
         if (movieDetails.getRelease_date() != null)
         movie.setRelease_date(movieDetails.getRelease_date());
         if (movieDetails.getRuntime() != null)
@@ -51,7 +51,7 @@ public class MovieController {
         }
 
 
-        final Movie updatedmovie = repository.save(movieDetails);
+        final Movie updatedmovie = repository.save(movie);
         return ResponseEntity.ok(updatedmovie);
 
     }
