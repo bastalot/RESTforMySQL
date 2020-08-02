@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import restservice.entity.Movie;
 
-@RestResource(exported = false)
+@RepositoryRestResource(path = "/movie")
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
 }
