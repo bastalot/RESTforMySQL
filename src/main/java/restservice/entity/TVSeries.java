@@ -20,10 +20,10 @@ public class TVSeries {
     @Column(name = "poster")
     private byte[] poster;
 
-    @OneToMany(mappedBy = "id_tvseries")
+    @OneToMany(mappedBy = "id_tvseries", cascade = CascadeType.REMOVE)
     Set<TVSeriesGenres> tvSeriesGenresSet;
 
-    @OneToMany(mappedBy = "id_tvseries")
+    @OneToMany(mappedBy = "id_tvseries", cascade = CascadeType.REMOVE)
     Set<TVSeassons> tvSeassonsSet;
 
 

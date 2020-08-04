@@ -12,7 +12,7 @@ public class Role {
     @Column(name = "role_type", length = 45, nullable = false)
     private String role_type;
 
-    @OneToMany(mappedBy = "id_role")
+    @OneToMany(mappedBy = "id_role", cascade = CascadeType.REMOVE)
     Set<PersonRole> personRoleSet;
 
     public Role() {

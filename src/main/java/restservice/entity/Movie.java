@@ -23,10 +23,10 @@ public class Movie {
     @Column(name = "poster")
     private byte[] poster;
 
-    @OneToMany(mappedBy = "id_movie")
+    @OneToMany(mappedBy = "id_movie", cascade = CascadeType.REMOVE)
     Set<MoviePeople> moviePeopleSet;
 
-    @OneToMany(mappedBy = "id_movie")
+    @OneToMany(mappedBy = "id_movie", cascade = CascadeType.REMOVE)
     Set<MovieGenres> movieGenresSet;
 
 

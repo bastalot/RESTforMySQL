@@ -18,7 +18,7 @@ public class SeriesPeople {
     @JoinColumn(name = "id_person", foreignKey = @ForeignKey(name = "fk_persontoseries"), nullable = false)
     Person id_person;
 
-    @Column(name = "character_name", length = 45, nullable = false)
+    @Column(name = "character_name", length = 45)
     String character_name;
 
     public SeriesPeople() {

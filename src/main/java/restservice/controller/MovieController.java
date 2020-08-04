@@ -1,6 +1,5 @@
 package restservice.controller;
 
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
@@ -8,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import restservice.entity.Movie;
 import restservice.repository.MovieRepository;
 
-import javax.validation.Valid;
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +22,6 @@ public class MovieController {
         return  repository.findAll();
     }
 
-
-
-
-
-
-
-
     @PostMapping("/movie")
     Movie newMovie(@RequestBody Movie newMovie) {
         return repository.save(newMovie);
@@ -42,9 +32,9 @@ public class MovieController {
         return repository.findOne(id_movie);
     }
 
-
     @PutMapping("/movie/{id_movie}")
-    ResponseEntity<Movie> update(@PathVariable Integer id_movie, @RequestBody Movie movieDetails) throws ResourceNotFoundException {
+    ResponseEntity<Movie> update(@PathVariable Integer id_movie, @RequestBody Movie movieDetails) throws
+            ResourceNotFoundException {
         Movie movie = repository.findOne(id_movie);
 
         if (movieDetails.getTitle() != null)

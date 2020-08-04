@@ -13,10 +13,10 @@ public class Genre {
     @Column(name = "genre_name", length = 45)
     private String genre_name;
 
-    @OneToMany(mappedBy = "id_genre")
+    @OneToMany(mappedBy = "id_genre", cascade = CascadeType.REMOVE)
     Set<MovieGenres> movieGenresSet;
 
-    @OneToMany(mappedBy = "id_genre")
+    @OneToMany(mappedBy = "id_genre", cascade = CascadeType.REMOVE)
     Set<TVSeriesGenres> tvSeriesGenresSet;
 
 

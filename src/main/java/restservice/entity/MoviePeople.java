@@ -2,7 +2,6 @@ package restservice.entity;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "moviepeople")

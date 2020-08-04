@@ -13,13 +13,13 @@ public class Person {
     @Column(name = "person_name", length = 45, nullable = false)
     private String person_name;
 
-    @OneToMany(mappedBy = "id_person")
+    @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
     Set<MoviePeople> moviePeopleSet;
 
-    @OneToMany(mappedBy = "id_person")
+    @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
     Set<PersonRole> personRoleSet;
 
-    @OneToMany(mappedBy = "id_person")
+    @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
     Set<SeriesPeople> seriesPeopleSet;
 
     public Person() {

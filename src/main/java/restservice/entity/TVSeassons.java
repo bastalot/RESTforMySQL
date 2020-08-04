@@ -13,6 +13,7 @@ public class TVSeassons {
     @Lob
     @Column(name = "summary")
     private String summary;
+    //@Column(name = "seasson_number", nullable = false)
     @Column(name = "seasson_number", nullable = false)
     private Integer seasson_number;
 
@@ -20,7 +21,7 @@ public class TVSeassons {
     @JoinColumn(name = "id_tvseries", foreignKey = @ForeignKey(name = "fk_tvseriestotvseassons"), nullable = false)
     TVSeries id_tvseries;
 
-    @OneToMany(mappedBy = "id_tvseassons")
+    @OneToMany(mappedBy = "id_tvseassons", cascade = CascadeType.REMOVE)
     Set<TVEpisodes> tvEpisodesSet;
 
     public TVSeassons() {

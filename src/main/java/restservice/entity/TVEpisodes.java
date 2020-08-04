@@ -22,7 +22,7 @@ public class TVEpisodes {
     @JoinColumn(name = "id_tvseassons", foreignKey = @ForeignKey(name = "fk_tvseassonstotvepisodes"), nullable = false)
     TVSeassons id_tvseassons;
 
-    @OneToMany(mappedBy = "id_tvepisodes")
+    @OneToMany(mappedBy = "id_tvepisodes", cascade = CascadeType.REMOVE)
     Set<SeriesPeople> seriesPeopleSet;
 
     public TVEpisodes() {
