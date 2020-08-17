@@ -48,6 +48,8 @@ public class MovieController {
         if (movieDetails.getPoster() != null){
             movie.setPoster(movieDetails.getPoster());
         }
+        if (movieDetails.getMovieGenresSet() != null)
+            movie.setMovieGenresSet(movieDetails.getMovieGenresSet());
 
 
         final Movie updatedmovie = repository.save(movie);

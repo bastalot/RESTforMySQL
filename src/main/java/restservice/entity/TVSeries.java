@@ -1,5 +1,7 @@
 package restservice.entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,6 +14,9 @@ public class TVSeries {
     private Integer id_tvseries;
     @Column(name = "title", length = 45, nullable = false)
     private String title;
+    @Lob
+    @Column(name = "summary")
+    private String summary;
     @Column(name = "start_year", length = 4)
     private String start_year;
     @Column(name = "end_year", length = 4)
@@ -25,6 +30,9 @@ public class TVSeries {
 
     @OneToMany(mappedBy = "id_tvseries", cascade = CascadeType.REMOVE)
     Set<TVSeassons> tvSeassonsSet;
+
+    @OneToMany(mappedBy = "id_tvseries", cascade = CascadeType.REMOVE)
+    Set<SeriesPeople> seriesPeopleSet;
 
 
     public TVSeries() {
@@ -44,6 +52,14 @@ public class TVSeries {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getStart_year() {
@@ -75,6 +91,7 @@ public class TVSeries {
         return "tvseries{" +
                 "id_tvseries='" + id_tvseries + '\'' + ", " +
                 "title='" + title + '\'' + ", " +
+                "summary='" + summary + '\'' + ", " +
                 "start_year='" + start_year + '\'' + ", " +
                 "end_year='" + end_year + '\'' + ", " +
                 "poster='" + poster + '\'' +

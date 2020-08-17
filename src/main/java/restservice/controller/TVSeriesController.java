@@ -39,6 +39,8 @@ public class TVSeriesController {
 
         if (tvseriesDetails.getTitle() != null)
             tvseries.setTitle(tvseriesDetails.getTitle());
+        if (tvseriesDetails.getSummary() != null)
+            tvseries.setSummary(tvseriesDetails.getSummary());
         if (tvseriesDetails.getStart_year() != null)
         tvseries.setStart_year(tvseriesDetails.getStart_year());
         if (tvseriesDetails.getEnd_year() != null)

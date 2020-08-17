@@ -10,7 +10,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_genre;
-    @Column(name = "genre_name", length = 45)
+    @Column(name = "genre_name", length = 45, unique = true)
     private String genre_name;
 
     @OneToMany(mappedBy = "id_genre", cascade = CascadeType.REMOVE)
@@ -34,6 +34,22 @@ public class Genre {
 
     public void setGenre_name(String genre_name) {
         this.genre_name = genre_name;
+    }
+
+    public Set<MovieGenres> getMovieGenresSet() {
+        return movieGenresSet;
+    }
+
+    public void setMovieGenresSet(Set<MovieGenres> movieGenresSet) {
+        this.movieGenresSet = movieGenresSet;
+    }
+
+    public Set<TVSeriesGenres> getTvSeriesGenresSet() {
+        return tvSeriesGenresSet;
+    }
+
+    public void setTvSeriesGenresSet(Set<TVSeriesGenres> tvSeriesGenresSet) {
+        this.tvSeriesGenresSet = tvSeriesGenresSet;
     }
 
     @Override

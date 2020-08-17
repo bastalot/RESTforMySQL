@@ -16,8 +16,6 @@ public class Person {
     @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
     Set<MoviePeople> moviePeopleSet;
 
-    @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
-    Set<PersonRole> personRoleSet;
 
     @OneToMany(mappedBy = "id_person", cascade = CascadeType.REMOVE)
     Set<SeriesPeople> seriesPeopleSet;

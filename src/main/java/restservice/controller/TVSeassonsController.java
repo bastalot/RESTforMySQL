@@ -28,9 +28,17 @@ public class TVSeassonsController {
         return repository.save(newTVSeasson);
     }
 
+
     @GetMapping("/tvseassons/{id_tvseassons}")
     TVSeassons one(@PathVariable Integer id_tvseassons) {
         return repository.findOne(id_tvseassons);
+    }
+
+
+    @GetMapping("/tvseassons/{id_tvseassons}/idtvseries")
+    Integer seriesId(@PathVariable Integer id_tvseassons) {
+        Integer seriesId = Integer.valueOf(repository.getOne(id_tvseassons).getId_tvseries().toString());
+        return seriesId;
     }
 
     @PutMapping("/tvseassons/{id_tvseassons}")

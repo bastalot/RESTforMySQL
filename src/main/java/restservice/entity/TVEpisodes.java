@@ -10,20 +10,19 @@ public class TVEpisodes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_tvepisodes;
-    @Column(name = "title", length = 45, nullable = false)
+    @Column(name = "title", length = 45)
     private String title;
-    @Lob
-    @Column(name = "sumary")
-    private String summary;
-    @Column(name = "airdate", length = 10)
-    private String airdate;
+
 
     @ManyToOne
     @JoinColumn(name = "id_tvseassons", foreignKey = @ForeignKey(name = "fk_tvseassonstotvepisodes"), nullable = false)
     TVSeassons id_tvseassons;
 
-    @OneToMany(mappedBy = "id_tvepisodes", cascade = CascadeType.REMOVE)
-    Set<SeriesPeople> seriesPeopleSet;
+    @Column(name = "episode_number", nullable = false)
+    private Integer episode_number;
+
+    //@OneToMany(mappedBy = "id_tvepisodes", cascade = CascadeType.REMOVE)
+    //Set<SeriesPeople> seriesPeopleSet;
 
     public TVEpisodes() {
     }
@@ -44,22 +43,6 @@ public class TVEpisodes {
         this.title = title;
     }
 
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public String getAirdate() {
-        return airdate;
-    }
-
-    public void setAirdate(String airdate) {
-        this.airdate = airdate;
-    }
-
     public TVSeassons getId_tvseassons() {
         return id_tvseassons;
     }
@@ -68,14 +51,21 @@ public class TVEpisodes {
         this.id_tvseassons = id_tvseassons;
     }
 
+    public Integer getEpisode_number() {
+        return episode_number;
+    }
+
+    public void setEpisode_number(Integer episode_number) {
+        this.episode_number = episode_number;
+    }
+
     @Override
     public String toString() {
         return "tvepisodes{" +
                 "id_tvepisodes='" + id_tvepisodes + '\'' + ", " +
                 "title='" + title + '\'' + ", " +
-                "summary='" + summary + '\'' + ", " +
-                "airdate='" + airdate + '\'' + ", " +
-                "id_tvseassons='" + id_tvseassons.getId_tvseassons() + '\'' +
+                "id_tvseassons='" + id_tvseassons.getId_tvseassons() + '\'' + ", " +
+                "episode_number='" + episode_number + '\'' +
                 '}';
     }
 }

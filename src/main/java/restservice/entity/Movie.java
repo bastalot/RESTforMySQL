@@ -83,6 +83,22 @@ public class Movie {
         this.poster = poster;
     }
 
+    public Set<MoviePeople> getMoviePeopleSet() {
+        return moviePeopleSet;
+    }
+
+    public void setMoviePeopleSet(Set<MoviePeople> moviePeopleSet) {
+        this.moviePeopleSet = moviePeopleSet;
+    }
+
+    public Set<MovieGenres> getMovieGenresSet() {
+        return movieGenresSet;
+    }
+
+    public void setMovieGenresSet(Set<MovieGenres> movieGenresSet) {
+        this.movieGenresSet = movieGenresSet;
+    }
+
     @Override
     public String toString() {
         return "movie{" +

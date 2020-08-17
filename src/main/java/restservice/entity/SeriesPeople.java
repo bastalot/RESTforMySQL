@@ -11,8 +11,8 @@ public class SeriesPeople {
     Integer id_seriespeople;
 
     @ManyToOne
-    @JoinColumn(name = "id_tvepisodes", foreignKey = @ForeignKey(name = "fk_tvepisodestoseriespeople"), nullable = false)
-    TVEpisodes id_tvepisodes;
+    @JoinColumn(name = "id_tvseries", foreignKey = @ForeignKey(name = "fk_tvseriestoseriespeople"), nullable = false)
+    TVSeries id_tvseries;
 
     @ManyToOne
     @JoinColumn(name = "id_person", foreignKey = @ForeignKey(name = "fk_persontoseries"), nullable = false)
@@ -32,12 +32,12 @@ public class SeriesPeople {
         this.id_seriespeople = id_seriespeople;
     }
 
-    public TVEpisodes getId_tvepisodes() {
-        return id_tvepisodes;
+    public TVSeries getId_tvseries() {
+        return id_tvseries;
     }
 
-    public void setId_tvepisodes(TVEpisodes id_tvepisodes) {
-        this.id_tvepisodes = id_tvepisodes;
+    public void setId_tvseries(TVSeries id_tvseries) {
+        this.id_tvseries = id_tvseries;
     }
 
     public Person getId_person() {
@@ -60,7 +60,7 @@ public class SeriesPeople {
     public String toString() {
         return "seriespeople{" +
                 "id_seriespeople='" + id_seriespeople + '\'' + ", " +
-                "id_tvepisodes='" + id_tvepisodes.toString() + '\'' + ", " +
+                "id_tvseries='" + id_tvseries.toString() + '\'' + ", " +
                 "id_person='" + id_person.toString() + '\'' + ", " +
                 "character_name='" + character_name + '\'' +
                 '}';
