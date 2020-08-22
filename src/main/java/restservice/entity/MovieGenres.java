@@ -1,5 +1,7 @@
 package restservice.entity;
 
+import restservice.controller.GenreController;
+
 import javax.persistence.*;
 
 @Entity

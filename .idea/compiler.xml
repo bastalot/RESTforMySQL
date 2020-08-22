@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="restservice" />
+        <module name="REST Proba 18.08" />
       </profile>
     </annotationProcessing>
   </component>

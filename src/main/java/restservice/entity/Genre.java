@@ -13,12 +13,6 @@ public class Genre {
     @Column(name = "genre_name", length = 45, unique = true)
     private String genre_name;
 
-    @OneToMany(mappedBy = "id_genre", cascade = CascadeType.REMOVE)
-    Set<MovieGenres> movieGenresSet;
-
-    @OneToMany(mappedBy = "id_genre", cascade = CascadeType.REMOVE)
-    Set<TVSeriesGenres> tvSeriesGenresSet;
-
 
     public Integer getId_genre() {
         return id_genre;
@@ -36,21 +30,6 @@ public class Genre {
         this.genre_name = genre_name;
     }
 
-    public Set<MovieGenres> getMovieGenresSet() {
-        return movieGenresSet;
-    }
-
-    public void setMovieGenresSet(Set<MovieGenres> movieGenresSet) {
-        this.movieGenresSet = movieGenresSet;
-    }
-
-    public Set<TVSeriesGenres> getTvSeriesGenresSet() {
-        return tvSeriesGenresSet;
-    }
-
-    public void setTvSeriesGenresSet(Set<TVSeriesGenres> tvSeriesGenresSet) {
-        this.tvSeriesGenresSet = tvSeriesGenresSet;
-    }
 
     @Override
     public String toString() {

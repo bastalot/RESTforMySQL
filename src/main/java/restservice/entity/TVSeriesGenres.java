@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class TVSeriesGenres {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_tvseriesgenres;
 
     @ManyToOne

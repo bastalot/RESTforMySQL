@@ -3,6 +3,9 @@ package restservice.entity;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -85,6 +88,34 @@ public class TVSeries {
     public void setPoster(byte[] poster) {
         this.poster = poster;
     }
+
+    /*
+    public List<Integer> getTvSeriesGenresSet() {
+        List<Integer> set = new ArrayList<>();
+
+        for (int i = 0; i < tvSeriesGenresSet.size(); i++) {
+            set.add(tvSeriesGenresSet.iterator().next().getId_tvseriesgenres());
+        }
+        return set;
+    }
+
+    public List<Integer> getTvSeassonsSet() {
+        List<Integer> set = new ArrayList<>();
+
+        for (int i = 0; i < tvSeassonsSet.size(); i++) {
+            set.add(tvSeassonsSet.iterator().next().getId_tvseassons());
+        }
+        return set;
+    }
+
+    public List<Integer> getSeriesPeopleSet() {
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < seriesPeopleSet.size(); i++) {
+            list.add(seriesPeopleSet.iterator().next().getId_seriespeople());
+        }
+        return list;
+    } */
 
     @Override
     public String toString(){

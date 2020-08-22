@@ -1,6 +1,7 @@
 package restservice.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -83,6 +84,7 @@ public class Movie {
         this.poster = poster;
     }
 
+    /*
     public Set<MoviePeople> getMoviePeopleSet() {
         return moviePeopleSet;
     }
@@ -97,7 +99,7 @@ public class Movie {
 
     public void setMovieGenresSet(Set<MovieGenres> movieGenresSet) {
         this.movieGenresSet = movieGenresSet;
-    }
+    } */
 
     @Override
     public String toString() {
