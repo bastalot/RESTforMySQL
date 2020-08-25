@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class MoviePeople {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_moviepeople;
 
     @ManyToOne
