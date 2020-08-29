@@ -27,7 +27,7 @@ public class PersonController {
         return repository.save(newPerson);
     }
 
-    @GetMapping("/person/{id_person")
+    @GetMapping("/person/{id_person}")
     Person one(@PathVariable Integer id_person) {
         return repository.findOne(id_person);
     }
