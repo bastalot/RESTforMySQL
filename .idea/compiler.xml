@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="restservice" />
         <module name="REST Proba 18.08" />
+        <module name="REST PostgreSQL" />
       </profile>
     </annotationProcessing>
   </component>
